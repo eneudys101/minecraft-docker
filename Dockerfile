@@ -7,5 +7,8 @@ ENV JAVA_HOME=/opt/jdk-16.0.1
 ENV PATH="$JAVA_HOME/bin:$PATH"
 WORKDIR /minecraft
 RUN wget https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar -O minecraft_server.jar
+COPY eula.txt ./eula.txt
 EXPOSE 25565
 CMD ["java", "-Xmx1024M", "-Xms1024M", "-jar", "minecraft_server.jar", "nogui"]
+
+
